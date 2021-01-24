@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-13">
+		<attributes>
+			<attribute name="module" value="true"/>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="D:/servlet_api/servlet-api.jar"/>
+	<classpathentry kind="lib" path="E:/MySQL-connector/mysql-connector-java-5.0.8-bin.jar"/>
+	<classpathentry kind="lib" path="E:/java_lib/commons-fileupload-1.4-bin/commons-fileupload-1.4.jar"/>
+	<classpathentry kind="lib" path="E:/java_lib/commons-fileupload-1.4-bin/commons-fileupload-1.4-javadoc.jar"/>
+	<classpathentry kind="lib" path="E:/java_lib/commons-fileupload-1.4-bin/commons-fileupload-1.4-sources.jar"/>
+	<classpathentry kind="lib" path="E:/java_lib/commons-fileupload-1.4-bin/commons-fileupload-1.4-tests.jar"/>
+	<classpathentry kind="lib" path="E:/java_lib/commons-fileupload-1.4-bin/commons-fileupload-1.4-test-sources.jar"/>
+	<classpathentry kind="lib" path="E:/java_jstl_jar/jstl.jar"/>
+	<classpathentry kind="lib" path="E:/java_jstl_jar/standard.jar"/>
+	<classpathentry kind="lib" path="E:/java_lib/commons-lang-2.5.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>
