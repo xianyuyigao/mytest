@@ -126,10 +126,10 @@ public class PropertyValueDAO {
                 int ptid = rs.getInt("ptid");
                 String value = rs.getString("value");
                  
-//                Product product = new ProductDAO().get(pid);
-//                Property property = new PropertyDAO().get(ptid);
-//                bean.setProduct(product);
-//                bean.setProperty(property);
+                Product product = new ProductDAO().get(pid);
+                Property property = new PropertyDAO().getProperty(ptid);
+                bean.setProduct(product);
+                bean.setProperty(property);
                 bean.setValue(value);
                 bean.setId(id);
             }
@@ -159,10 +159,10 @@ public class PropertyValueDAO {
  
                 String value = rs.getString("value");
                  
-//                Product product = new ProductDAO().get(pid);
-//                Property property = new PropertyDAO().get(ptid);
-//                bean.setProduct(product);
-//                bean.setProperty(property);
+                Product product = new ProductDAO().get(pid);
+                Property property = new PropertyDAO().getProperty(ptid);
+                bean.setProduct(product);
+                bean.setProperty(property);
                 bean.setValue(value);
                 bean.setId(id);
             }
@@ -173,6 +173,78 @@ public class PropertyValueDAO {
         }
         return bean;
     }
+	
+	
+	/**
+	 * 
+	 */
+	
+	
+	public List<PropertyValue> list(){
+		return list(0,Short.MAX_VALUE);
+	}
+	
+	
+	public List<PropertyValue> list(int start,int count){
+		List<PropertyValue> beans = new ArrayList<PropertyValue>();
+		
+		String sql = "select * from PropertyValue order by id desc limit ?,?";
+		
+		try(Connection c = DButil.getConnection();PreparedStatement ps = c.prepareStatement(sql);){
+			ps.setInt(1, start);
+			ps.setInt(2, count);
+			
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				PropertyValue bean = new PropertyValue();
+				int id = rs.getInt(1);
+				
+				int pid = rs.getInt("pid");
+				int ptid = rs.getInt("ptid");
+				
+				String value = rs.getString("value");
+				
+				Product product = new ProductDAO().get(pid);
+				Property property = new PropertyDAO().getProperty(ptid);
+				bean.setProduct(product);
+				bean.setProperty(property);
+				bean.setValue(value);
+				bean.setId(id);
+				beans.add(bean);
+				
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return beans;
+	}
+	
+	/**
+	 * ≥ı ºªØ
+	 */
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
